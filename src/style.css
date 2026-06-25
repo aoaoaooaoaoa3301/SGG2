@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    color:var(--color-white);
+    font-family: 'OpenSans';
+    font-weight: 700;
+    white-space: pre-line;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
+}
+body{
+    background-color: var(--color-2side);
+}
+
+:root {
+
+/* добавить --color-bg и так далее */
+    --color-3side: rgb(66, 66, 66);
+    --color-5side: rgb(44, 44, 44);
+    --color-4side: rgb(55, 55, 55);
+    --color-2side: rgb(77, 77, 77);
+    --color-1side: rgb(117, 117, 117);
+    --color-main: rgb(255, 219, 88);
+    --color-main-second: rgb(255, 222, 104);
+    --color-white:rgb(255, 255, 255);
+    --color-black:rgb(0, 0, 0);
+    --color-error: rgb(255, 92, 92);
+    --color-select-error: rgb(255, 147, 147);
+    --color-debuff:rgb(65,34,39);
+    --color-buff: rgb(71,74,81);
+}
+
+h1 {
+    text-align: center;
+}
+p {
+    font-size: 14px;
+}
+button {
+    font-size: 18px;
+}
+input{
+    border:none;
+    padding: 6px 0 6px 0;
+    border-radius: 6px;
+    background: var(--color-2side);
+    color: var(--color-white);
+    text-align: center;
+    
+    font-size: 14px;
+}
+a{
+    color: var(--color-main);
+}
+a:hover{
+    color: var(--color-main-second);
+}
+
+
+.ant-layout{
+    background-color: var(--color-2side);
+}
+
+.ant-layout-sider-children {
+    background-color:var(--color-2side);
+}
+
+.ant-menu-light.ant-menu-root.ant-menu-inline{
+    border:0;
+}
+
+.ant-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+    width: 15rem;
+    position: fixed;
+
+    background-color:var(--color-2side);
+}
+
+.ant-menu-inline .ant-menu-item{
+    padding: 0;
+    padding-right: 24px;
+    height: 3rem;
+    border-radius: 32px;
+}
+
+.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child {
+    background-color:var(--color-3side);
+}
+.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child span {
+    color: var(--color-main);
+}
+
+.ant-menu-item:active{
+    background-color:var(--color-black);
+}
+
+.ant-menu-title-content{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+.ant-tabs-nav-list {
+    
+    justify-content: center;
+    max-height: 100vh;
+    min-height: 100vh;
+    min-width: 10rem;
+}
+.ant-tabs-nav {
+    background-color:var(--color-2side);
+}
+
+.ant-tabs-tab {
+    justify-content: center;
+    border-radius: 16px;
+    
+}
+.ant-tabs-tab:hover{
+    background-color:var(--color-1side);
+}
+
+.ant-tabs-tab-btn {
+    font-weight: 500;
+}
+.ant-tabs-tab:active .ant-tabs-tab-btn:active{
+    color: var(--color-main-second);
+}
+.ant-tabs-tab:active .ant-tabs-tab-btn{
+    color: var(--color-main-second);
+}
+.ant-tabs-tab:active {
+    
+    transform: scale(0.8);
+    transition: all 0.3s;
+}
+
+.ant-tabs-ink-bar {
+  display: none;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--color-main);
+}
+.ant-tabs-tab.ant-tabs-tab-active {
+    background-color: var(--color-3side);
+}
