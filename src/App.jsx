@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, ConfigProvider } from 'antd';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
+
 import ContentPlayers from './components/contentPlayers.jsx';
 import ContentWheel from './components/contentWheel.jsx';
 import ContentFaq from './components/contentFaq.jsx'
@@ -10,7 +11,8 @@ import ContentShop from './components/contentShop.jsx';
 import ContentDebuffs from './components/contentDebuffs.jsx';
 import Test from './components/test.jsx';
 
-const { Sider, Content } = Layout;
+
+const { Sider, Content, Header } = Layout;
 
 const catalogs = {
   map: '',
@@ -79,28 +81,44 @@ export default function App() {
   };
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={setCollapsed}
-        trigger={null}
-        width={'15rem'}
-      >
-        <Menu
-          mode="inline"
-          inlineCollapsed={collapsed}
-          selectedKeys={[activeKey]}
-          items={menuItems}
-          onClick={handleMenuClick}
-        />
-      </Sider>
+      <Layout >
 
-      
-      <Content>
-        <Outlet />
-      </Content>
-      
-    </Layout>
+        
+        <Sider
+                  collapsible
+                  collapsed={collapsed}
+                  onCollapse={setCollapsed}
+                  trigger={null}
+                  width={'15rem'}
+                >
+                  <Menu
+                    mode="inline"
+                    inlineCollapsed={collapsed}
+                    selectedKeys={[activeKey]}
+                    items={menuItems}
+                    onClick={handleMenuClick}
+                  />
+            </Sider>
+          
+        
+        
+        <Layout>
+          
+          <Header>
+            <div >
+              <h1>
+                $uicide$quadGunterGame 2
+              </h1>
+            </div>
+          </Header>
+          
+
+          <Content>
+            <Outlet />
+          </Content>
+        </Layout>
+        
+      </Layout>
+
   );
 };

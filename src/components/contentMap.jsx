@@ -8,7 +8,7 @@ export default function ContentMap(){
     const [mapData, setMapData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [icons, setIcons] = useState([]);
-    const [isAllertWiner, setIsAllertWiner] = useState(true);
+    const [isAllertWiner, setIsAllertWiner] = useState(false);
     const currentLogin = localStorage.getItem('auth');
 
     // Загрузка всех иконок
@@ -77,12 +77,7 @@ export default function ContentMap(){
 
     return(
         <div className="styleDiv flex-center" id='map'>
-            <div className="allertWinner" onClick={onClick} style={{visibility:isAllertWiner?'visible':'hidden'}}>
-                
-                <div style={{fontSize:'100px'}}>
-                    Победитель 3его SSGG - <img style={{width:'100px'}} src="pictures/adzeen.jpg" alt="" /> Адзин
-                </div>
-            </div>
+            
             <div className="styleDiv-Content game-field" style={{position:'relative'}}>
                 
                 {icons.map((icon) => (

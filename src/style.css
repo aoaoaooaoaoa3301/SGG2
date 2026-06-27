@@ -3,42 +3,50 @@
     padding: 0;
     box-sizing: border-box;
     
+    
+    
     color:var(--color-white);
     font-family: 'OpenSans';
     font-weight: 700;
-    white-space: pre-line;
+
 }
 @font-face {
     font-family: 'OpenSans';
     src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
 }
 body{
-    background-color: var(--color-2side);
+    background-color:var(--color-2side)
 }
 
 :root {
 
 /* добавить --color-bg и так далее */
-    --color-3side: rgb(66, 66, 66);
-    --color-5side: rgb(44, 44, 44);
-    --color-4side: rgb(55, 55, 55);
-    --color-2side: rgb(77, 77, 77);
-    --color-1side: rgb(117, 117, 117);
-    --color-main: rgb(255, 219, 88);
-    --color-main-second: rgb(255, 222, 104);
+    --color-5side: rgb(27, 27, 49);
+    --color-4side: rgb(21, 21, 39);
+    --color-3side: rgb(197, 197, 197);
+    --color-2side: rgb(42, 42, 80);
+    --color-1side: rgb(28, 28, 53);
+    --color-main: rgb(83, 0, 190);
+    --color-main-second: rgb(49, 0, 114);
+    --color-main-shadow: rgba(157, 82, 255, 0.568);
     --color-white:rgb(255, 255, 255);
     --color-black:rgb(0, 0, 0);
     --color-error: rgb(255, 92, 92);
     --color-select-error: rgb(255, 147, 147);
     --color-debuff:rgb(65,34,39);
-    --color-buff: rgb(71,74,81);
+    --color-buff: rgb(39, 23, 107);
 }
 
 h1 {
     text-align: center;
+    text-shadow:  1px 1px 10px var(--color-white) 
 }
 p {
     font-size: 14px;
+    text-shadow: 1px 1px 10px var(--color-white)
+}
+span {
+    text-shadow: 1px 1px 5px var(--color-white)
 }
 button {
     font-size: 18px;
@@ -61,18 +69,14 @@ a:hover{
 }
 
 
-.ant-layout{
-    background-color: var(--color-2side);
-}
 
-.ant-layout-sider-children {
-    background-color:var(--color-2side);
-}
 
 .ant-menu-light.ant-menu-root.ant-menu-inline{
     border:0;
 }
-
+.ant-layout-sider{
+    z-index: 100;
+}
 .ant-menu {
     display: flex;
     flex-direction: column;
@@ -82,7 +86,7 @@ a:hover{
     width: 15rem;
     position: fixed;
 
-    background-color:var(--color-2side);
+    background: linear-gradient(45deg, var(--color-1side), var(--color-2side), var(--color-1side));
 }
 
 .ant-menu-inline .ant-menu-item{
@@ -97,17 +101,35 @@ a:hover{
 }
 .ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child span {
     color: var(--color-main);
+    text-shadow: 1px 1px 5px var(--color-main-shadow)
 }
 
 .ant-menu-item:active{
     background-color:var(--color-black);
 }
+.ant-layout-content{
+    background-color:var(--color-1side);
+}
+.ant-layout-header{
+    background: linear-gradient(90deg, var(--color-1side), var(--color-2side), var(--color-1side));
+}
+.ant-select-selector{
+    background-color:var(--color-2side);
+}
+.ant-layout-sider{
+    background:var(--color-1side);
+}
+
 
 .ant-menu-title-content{
     display: flex;
     justify-content: center;
 }
-
+@media (max-width: 425px) {
+    .ant-layout.ant-layout-has-sider >.ant-layout-content{
+        min-width: 1500px;
+    }
+}
 
 
 
@@ -159,5 +181,5 @@ a:hover{
     color: var(--color-main);
 }
 .ant-tabs-tab.ant-tabs-tab-active {
-    background-color: var(--color-3side);
+    background:none;
 }

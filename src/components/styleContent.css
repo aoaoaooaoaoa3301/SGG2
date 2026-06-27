@@ -1,14 +1,19 @@
 
 .styleDiv {
-    padding: 2rem 1rem 2rem 1rem;
+    padding-inline: 3rem;
+    padding-top: 2rem;
+    min-height: 100vh;
+    overflow: hidden;
+    
+
+    background-color:var(--color-1side);
+    background-image: url('/1274.svg');
+    background-size:cover;
+    
     
 }
 .styleDiv-Content {
-    padding: 2rem;
-    min-height: 100vh;
-
-    border-radius: 2rem;
-    background-color: var(--color-3side);
+    white-space:pre-line;
 }
 .error {
     color: var(--color-error);
@@ -36,18 +41,21 @@
 }
 #map .styleDiv-Content {
     display: grid;
-    min-height: 0;
+    
     grid-template-columns: repeat(10,1fr);
-    grid-template-rows: repeat(10,1fr);
+    grid-template-rows: repeat(14,4rem);
     gap: 1rem;
     
     padding: 2rem;
+    padding-bottom: 15rem;
+    
 }
 
 #map .cage {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     font-size: 18px;
 
@@ -57,17 +65,21 @@
     height: 4rem;
 
     cursor: pointer;
-    border: 2px solid var(--color-1side);
+    border: 0px solid var(--color-4side);
+    box-shadow: 2px 2px 10px var(--color-main-shadow);
+    
     border-radius: 24px;
 }
 .cage-info{
     visibility: hidden;
     text-align: center;
     position: absolute;
-    z-index: 1;
+    z-index: 11;
     padding: 8px;
 
     background-color:var(--color-1side);
+    box-shadow: 0px 0px 15px var(--color-white);
+    border: 1px solid var(--color-4side);
     top: 3rem;
     width: 0;
     border-radius: 8px;
@@ -80,21 +92,19 @@
 }
 
 
-#map .cage-1line::before{
-    content: '';
-    position: absolute;
-    left: 100%;
-    height: 2px;
-    width: calc(1rem + 2px);
-    background-color:var(--color-1side);
-}
+#map .cage-1line::before,
 #map .cage-2line::before{
     content: '';
     position: absolute;
+    height: 1px;
+    width: calc(1rem);
+    background-color:var(--color-3side);
+}
+#map .cage-1line::before{
+    left: 100%;
+}
+#map .cage-2line::before{
     right: 100%;
-    height: 2px;
-    width: calc(1rem + 2px);
-    background-color:var(--color-1side);
 }
 #map .cage.cage-special:before{
     content: '';
@@ -102,13 +112,13 @@
     top: 100%;
     left: 50%;
     height: calc(1rem + 2px);
-    width: 2px;
-    background-color:var(--color-1side);
+    width: 1px;
+    background-color:var(--color-3side);
 }
 
 /*players*/
 #players .ant-tabs-nav {
-    background-color:var(--color-3side);
+    background:none;
 }
 #players .ant-tabs-tab {
     border-radius: 8px;
@@ -176,7 +186,7 @@
     margin-bottom: 3rem;
 }
 #roll .ant-select-selector{
-    background-color:var(--color-3side);
+    background-color:var(--color-2side);
     color: var(--color-white);
 }
 #roll .ant-select-selector:hover{
@@ -321,6 +331,7 @@
 }
 
 .butContainer{
+    padding-bottom: 10rem;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -336,13 +347,13 @@
     border-radius: 12px;
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.877);
     
-    background-color:var(--color-main);
+    background-color:var(--color-main-second);
 }
 .buttonToRoll:hover {
-    width: 17rem;
-    height: 4rem;
-    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.521);
-    background-color:var(--color-main-second);
+    width: 18rem;
+    
+    box-shadow: 0px 0px 40px var(--color-white);
+    background-color:var(--color-main);
 }
 
 
@@ -376,7 +387,7 @@
 .login-notification input { 
     text-align: center;
     color: var(--color-white);
-    background-color: var(--color-5side);
+    background-color: var(--color-4side);
     height: 2rem;
     border: none;
     border-radius:8px;
@@ -395,15 +406,15 @@
 .login-notification button {
     text-align: center;
     cursor: pointer;
-    color: var(--color-main);
-    background-color: var(--color-5side);
+    color: var(--color-white);
+    background-color: var(--color-main);
     height: 2rem;
     width: 4rem;
     border: none;
     border-radius:8px;
 }
 .login-notification button:hover {
-    border: 1px solid var(--color-main);
+    border: 1px solid var(--color-main-second);
 }
 
 .input-account{
@@ -423,7 +434,7 @@
     cursor: pointer;
     padding: 0.5rem;
     color:var(--color-white);
-    background-color: var(--color-1side);
+    background-color: var(--color-main);
     border: 1px solid var(--color-5side);
     border-radius:1rem;
 }
@@ -459,7 +470,7 @@
     width: 3rem;
     height: 3rem;
     padding: 8px;
-    background-color:var(--color-3side);
+    background-color:var(--color-4side);
     cursor: pointer;
     transition: 0.5s;
 
@@ -503,9 +514,10 @@
     background:none;
     border:0;
     border-radius:8px;
+    background-color:var(--color-4side);
 }
 .itemInventory button:hover {
-    background: var(--color-2side);
+    background-color:var(--color-2side);
 
 }
 
@@ -539,7 +551,7 @@
     border-radius:1rem;
 }
 .buttonChangeBalance:hover{
-    background-color:var(--color-5side);
+    background-color:var(--color-2side);
 }
 
 
@@ -598,7 +610,7 @@
 }
 .cardShop .container-info {
     position: relative;
-    background-color: var(--color-3side);
+    background-color: var(--color-4side);
     border-radius: 24px;
     width: 95%;
     height: 12rem;
@@ -622,7 +634,7 @@
     padding: 1rem 0 1rem 0;
 
     text-align: center;
-    background-color: var(--color-3side);
+    background-color: var(--color-4side);
     border-radius: 24px;
     
 }
@@ -636,9 +648,45 @@
     border-radius: 12px;
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.877);
     
-    background-color:var(--color-main);
-}
-.buttonToBuy:hover {
-    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.521);
     background-color:var(--color-main-second);
 }
+.buttonToBuy:hover {
+    box-shadow: 0px 0px 40px var(--color-white);
+    background-color:var(--color-main);
+}
+/*
+@media (max-width: 425px) {
+    #map .cage {
+        font-size: 9px;
+        width: 4rem;
+        
+        height: 2rem;
+        border: 1px solid var(--color-1side);
+        border-radius: 24px;
+    }
+    .cage-info{
+        z-index: 1;
+        padding: 4px;
+
+        background-color:var(--color-1side);
+        top: 1.5rem;
+        width: 0;
+        border-radius: 4px;
+    }
+    .cage:hover .cage-info{
+        width: 7.5rem;
+    }
+
+
+    #map .cage-1line::before{
+        height: 1px;
+    }
+    #map .cage-2line::before{
+        height: 1px;
+    }
+    #map .cage.cage-special:before{
+        width: 1px;
+
+    }
+}
+    */

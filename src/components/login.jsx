@@ -27,7 +27,7 @@ export default function Login(){
                 <p className='error' style={{visibility: (!isFound) ? 'visible':'hidden'}}>Не верный код</p>
                 <form onSubmit={onSubmit}>
                     <input type="text" onChange={onChange} value={pincode || ''}/>
-                    <button type="submit">клик</button>
+                    <button type="submit">вход</button>
                 </form>
             </div>
         </div>

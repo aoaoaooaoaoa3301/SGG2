@@ -45,28 +45,28 @@ export default function GameField() {
 
 
   return (
-    <div
-      className="game-field"
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '600px',
-        backgroundColor: '#f5f5f5',
-        border: '2px solid #ddd',
-        overflow: 'hidden',
-        touchAction: 'none', // для мобильных устройств
-      }}
-    >
-      {icons.map((icon) => (
-        <Icon
-          key={icon.id}
-          iconPosition={[icon.x,icon.y]}
-          icon={icon.image}
-          image={icon.image}
-          isOwner={icon.login === currentLogin}
-          onUpdatePosition={updateIconPosition}
-        />
-      ))}
-    </div>
-  );
+    
+    
+        <Card className="w-[400px]">
+          
+          <Card.Header>
+            <Card.Title>Become an Acme Creator!</Card.Title>
+            <Card.Description>
+              Visit the Acme Creator Hub to sign up today and start earning credits from your fans and
+              followers.
+            </Card.Description>
+          </Card.Header>
+          <Card.Footer>
+            <Link
+              aria-label="Go to Acme Creator Hub (opens in new tab)"
+              href="https://heroui.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Creator Hub
+              <Link.Icon aria-hidden="true" />
+            </Link>
+          </Card.Footer>
+        </Card>
+      );
 }

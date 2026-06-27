@@ -138,81 +138,84 @@ export default function ContentWheel(){
       requestAnimationFrame(animate);
     }
     return(
-        <div className="styleDiv" id='roll'>
-            <div className="styleDiv-Content">
-                <h1>Супер-Пупер Колесо</h1>
-                <div className="container" id="container">
-                    <div className="wheel-pack">
-                        <div className="pointer pointer-left"></div>
-                        <div className="pointer pointer-right"></div>
+        <div className="styleDiv">
 
-                        <div className="wheel-container">
-                            <div className="wheel" id="wheel">
-                                {spinTape.map((item, index) => (
-                                    <div key={index} id={index} className='wheel-item' style={{color: winningIndex == index ? `var(--color-main)` : `var(--color-white)`}}>
-                                        {item}
-                                    </div>
-                                ))}
+            <div className="styleDiv-Content" id='roll'>
+                
+                    <h1>Супер-Пупер Колесо</h1>
+                    <div className="container" id="container">
+                        <div className="wheel-pack">
+                            <div className="pointer pointer-left"></div>
+                            <div className="pointer pointer-right"></div>
+
+                            <div className="wheel-container">
+                                <div className="wheel" id="wheel">
+                                    {spinTape.map((item, index) => (
+                                        <div key={index} id={index} className='wheel-item' style={{color: winningIndex == index ? `var(--color-main)` : `var(--color-white)`,textShadow:'1px 1px 10px var(--color-main-shadow) '}}>
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+                        </div>  
+                        
+                        <div className="controls">
+                            {/* <div>
+                                <label>Время прокрутки: <input id="duration" type="number" defaultValue={3} min="3" max="10"/> с</label>
+                            </div> */}
                         </div>
-                    </div>  
+                    </div>
+                    <p>{gotedGameData}</p>
+                    <form onSubmit={valueGameSubmit}>
+                        <label>
+                            <Select
+                                className="tagsInput"
+                                showSearch={{ optionFilterProp: 'label', onSearch }}
+                                placeholder="Выбери коллекцию"
+                                onChange={valueGameChange}
+                                options={[
+                                {
+                                    value: 'Detective',
+                                    label: 'Detective',
+                                },
+                                {
+                                    value: 'Horror',
+                                    label: 'Horror',
+                                },
+                                {
+                                    value: 'Martial arts',
+                                    label: 'Martial arts',
+                                },
+                                {
+                                    value: 'Race',
+                                    label: 'Race',
+                                },
+                                {
+                                    value: 'Rogue-like',
+                                    label: 'Rogue-like',
+                                },
+                                {
+                                    value: 'Souls-like',
+                                    label: 'Souls-like',
+                                },
+                                {
+                                    value: 'Space',
+                                    label: 'Space',
+                                },
+                                {
+                                    value: 'War',
+                                    label: 'War',
+                                },
+                                ]}
+                            />
+                        </label>
+                        <div className="butContainer">
+                            <button type="submit" id="buttonToRoll" className="buttonToRoll">
+                                КЛИК
+                            </button>
+                        </div>
+                    </form>
                     
-                    <div className="controls">
-                        {/* <div>
-                            <label>Время прокрутки: <input id="duration" type="number" defaultValue={3} min="3" max="10"/> с</label>
-                        </div> */}
-                    </div>
-                </div>
-                <p>{gotedGameData}</p>
-                <form onSubmit={valueGameSubmit}>
-                    <label>
-                        <Select
-                            className="tagsInput"
-                            showSearch={{ optionFilterProp: 'label', onSearch }}
-                            placeholder="Выбери коллекцию"
-                            onChange={valueGameChange}
-                            options={[
-                            {
-                                value: 'Detective',
-                                label: 'Detective',
-                            },
-                            {
-                                value: 'Horror',
-                                label: 'Horror',
-                            },
-                            {
-                                value: 'Martial arts',
-                                label: 'Martial arts',
-                            },
-                            {
-                                value: 'Race',
-                                label: 'Race',
-                            },
-                            {
-                                value: 'Rogue-like',
-                                label: 'Rogue-like',
-                            },
-                            {
-                                value: 'Souls-like',
-                                label: 'Souls-like',
-                            },
-                            {
-                                value: 'Space',
-                                label: 'Space',
-                            },
-                            {
-                                value: 'War',
-                                label: 'War',
-                            },
-                            ]}
-                        />
-                    </label>
-                    <div className="butContainer">
-                        <button type="submit" id="buttonToRoll" className="buttonToRoll">
-                            КЛИК
-                        </button>
-                    </div>
-                </form>
                 
             </div>
         </div>
