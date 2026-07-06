@@ -15,7 +15,8 @@
     src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
 }
 body{
-    background-color:var(--color-2side)
+    background-color:var(--color-2side);
+    
 }
 
 :root {
@@ -126,6 +127,9 @@ a:hover{
     justify-content: center;
 }
 @media (max-width: 425px) {
+    .ant-layout.ant-layout-has-sider >.ant-layout{
+        min-width: 1500px;
+    }
     .ant-layout.ant-layout-has-sider >.ant-layout-content{
         min-width: 1500px;
     }
@@ -182,4 +186,7 @@ a:hover{
 }
 .ant-tabs-tab.ant-tabs-tab-active {
     background:none;
+}
+.ant-select-focused {
+    color:var(--color-white);
 }
