@@ -40,14 +40,14 @@ body{
 
 h1 {
     text-align: center;
-    text-shadow:  1px 1px 10px var(--color-white) 
+    text-shadow:  1px 1px 10px var(--color-white);
 }
 p {
     font-size: 14px;
-    text-shadow: 1px 1px 10px var(--color-white)
+    
 }
 span {
-    text-shadow: 1px 1px 5px var(--color-white)
+    
 }
 button {
     font-size: 18px;
@@ -125,6 +125,7 @@ a:hover{
 .ant-menu-title-content{
     display: flex;
     justify-content: center;
+    text-shadow:  1px 1px 10px var(--color-white);
 }
 @media (max-width: 425px) {
     .ant-layout.ant-layout-has-sider >.ant-layout{
