@@ -2,121 +2,121 @@ export const shop = [
 {
 name:'Яйцо',
 info:'Если игрок успешно проходит следующую клетку, яйцо вылупляется и дает + кубик к следующему броску. В случае провала яйцо разбивается, оставляя только скорлупу, которую можно выбросить',
-img:'pictures/Egg.png',
-price:2
+image:'pictures/Egg.png',
+price:8
 },
 {
 name:'Переброс',
 info:'Позволяет один раз перекинуть кубик',
-img:'pictures/Rethrow.png',
-price:2
+image:'pictures/Rethrow.png',
+price:8
 },
 {
 name:'Сценарий',
 info:' Игрок может выбрать одну из трёх игр, одна, которая наролилась, и две соседние',
-img:'pictures/Plan.png',
-price:2
+image:'pictures/Plan.png',
+price:8
 },
 {
 name:'Свобода выбора',
 info:'Позволяет выбрать любую игру из колеса(не работает на коллекции)',
-img:'pictures/Free.png',
-price:4
+image:'pictures/Free.png',
+price:16
 },
 {
 name:'Щит упрямства',
 info:'Блокирует получение дебаффа на один раз, если при покупке предмета, у игрока уже есть один дебафф, игнорирует его',
-img:'pictures/Shield.png',
-price:1
+image:'pictures/Shield.png',
+price:4
 },
 {
 name:'Талисман Удачи',
 info:'При использовании этого предмета следующий бросок кубика будет либо от 1 до 3, либо от 4 до 6 (на выбор игрока)',
-img:'pictures/Lucky.png',
-price:2
-},
-{
-name:'Чит-код?',
-info:'Вы получаете дополнительный кубик d3 за каждую пройденную игру с этим предметом в инвентаре, однако добавляете 2 часа к верхнему порогу времени при ролле игры. Всего имеет 3 возможности получить кубик, после, используется',
-img:'pictures/Cheat.png',
-price:3
+image:'pictures/Lucky.png',
+price:8
 },
 {
 name:'Ракета',
 info:'+3 к следующему броску кубика',
-img:'pictures/Launch.png',
-price:2
+image:'pictures/Launch.png',
+price:8
 },
 {
 name:'Нуб',
 info:'Можно смотреть прохождение нароленной игры',
-img:'pictures/Noob.png',
-price:1
+image:'pictures/Noob.png',
+price:4
 },
 {
 name:'Кофеин',
 info:'+1 к двум следующим броскам кубика. Стакаются между собой',
-img:'pictures/Coffe.png',
-price:2
+image:'pictures/Coffe.png',
+price:8
+},
+{
+name:'Чит-код?',
+info:'Вы получаете дополнительный кубик за каждую пройденную игру с этим предметом в инвентаре. Всего имеет 2 возможности получить кубик, после, используется',
+image:'pictures/Cheat.png',
+price:16
 },
 {
 name:'Сделка с дьяволом',
 info:'+2 к броску, но если если итоговый результат меньше 4 - получаешь случайный дебафф',
-img:'pictures/Deal.png',
-price:1
+image:'pictures/Deal.png',
+price:4
 },
 {
 name:'Молоко',
 info:'Снимает один дебафф. Можно хранить и использовать в любой момент',
-img:'pictures/Milk.png',
-price:2
+image:'pictures/Milk.png',
+price:8
 },
 {
 name:'Грязный трюк',
 info:'Накладывает на другого игрока дебафф: -1 к следующему броску',
-img:'pictures/Trick.png',
-price:2
+image:'pictures/Trick.png',
+price:8
 },
 {
 name:'Сухой Паёк',
 info:'Получаете +1 к броску, если игра длится более 5 часов',
-img:'pictures/Ration.png',
-price:1
+image:'pictures/Ration.png',
+price:4
 },
 {
 name:'Ключ последнего шанса',
 info:'При дропе игры дает возможность испытать удачу ещё раз с -2 к кубику',
-img:'pictures/Key.png',
-price:3
+image:'pictures/Key.png',
+price:12
 },
 {
 name:'Костыль',
 info:'Если три раза подряд выпал неудачный бросок(1 - 3) - автоматом дает +3 к следующему броску',
-img:'pictures/Crutch.png',
-price:1
+image:'pictures/Crutch.png',
+price:4
 },
 {
 name:'Подкат',
 info:'При использовании, игрок добавляет +1 к следующему броску кубика, а также дополнительный эффект. Эффект - если игрок в течении своего следующего хода столкнется с другим игроком(ами), он сбивает их с ног и они получают -1 к броску кубика.',
-img:'pictures/Tackle.png',
-price:3
+image:'pictures/Tackle.png',
+price:12
 },
 {
 name:'Сапоги скороходы',
 info:'Все броски кубика на передвижение по карте умножаются на два. Имеет два заряда. Один заряд = Один кубик. Используется автоматически',
-img:'pictures/Boot.png',
-price:3
+image:'pictures/Boot.png',
+price:12
 },
 {
 name:'Казино',
 info:'Игрок выбирает сторону монетки. За каждое совпадение получает +1 к броску и может продолжать(не меняя выбранную сторону).Если проигрыш наступает сразу - получает -2, иначе просто прекращает серию с накопленным бонусом',
-img:'pictures/Casino.png',
-price:1
+image:'pictures/Casino.png',
+price:4
 },
 {
 name:'Даун',
-info:'Игрок может поменять тег клетки, на своё усмотрение, менять время - запрещено',
-img:'pictures/Retard.png',
-price:2
+info:'Игрок может поменять тег клетки, на своё усмотрение',
+image:'pictures/Retard.png',
+price:8
 }
 ]

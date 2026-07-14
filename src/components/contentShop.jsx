@@ -3,7 +3,7 @@ import { shopSessions } from '../shop.js';
 import { useEffect, useState } from 'react';
 import { randint } from "../utils";
 import { supabase } from '../supabaseClient.js';
-import { loadCurrentShop, getTimeToNextEpoch, getCurrentEpoch } from './shopLogic';
+import { loadCurrentShop, getTimeToNextEpoch, getCurrentEpoch, createCurrentShop } from './shopLogic';
 
 
 
@@ -12,7 +12,8 @@ export default function ContentShop(){
     const [playerData, setPlayerData] = useState([]);
     const [numCollection, setNumCollection] = useState(0);
     
-    const [shopItems, setShopItems] = useState([]);
+    const [shopItems, setShopItems] = useState(createCurrentShop());
+    console.log(typeof(shopItems),shopItems);
     const [currentEpoch, setCurrentEpoch] = useState(getCurrentEpoch());
     const [timeLeft, setTimeLeft] = useState(getTimeToNextEpoch());
 
@@ -30,7 +31,7 @@ export default function ContentShop(){
             }
       }
           fetchPlayer()
-          loadCurrentShop().then(({ items }) => setShopItems(items)).catch(console.error);
+          
         }, []);
 
     useEffect(() => {
@@ -40,7 +41,7 @@ export default function ContentShop(){
                 setTimeout(() => {
                     const newEpoch = getCurrentEpoch();
                     setCurrentEpoch(newEpoch);
-                    loadCurrentShop().then(({ items }) => setShopItems(items));
+                    
             }, 1000);
         }
         setTimeLeft(newTime);
@@ -105,24 +106,7 @@ export default function ContentShop(){
 
   const slotId = emptySlot[0].id;
 
-  // Сначала получаем актуальное значение remaining_stock из базы
-  const { data: currentShopItem, error: fetchError } = await supabase
-    .from('Shop')
-    .select('remaining_stock')
-    .eq('epoch', item.epoch % 6)
-    .eq('id', item.id)
-    .single();
-
-  if (fetchError) {
-    console.error('Ошибка получения текущего остатка:', fetchError);
-    alert('Не удалось проверить наличие товара');
-    return;
-  }
-
-  if (currentShopItem.remaining_stock <= 0) {
-    alert(`${item.name} уже закончился (кто то купил раньше)`);
-    return;
-  }
+  
 
   // Обновляем инвентарь
   const { error: inventoryError } = await supabase
@@ -140,20 +124,6 @@ export default function ContentShop(){
     return;
   }
 
-  // Обновляем остаток в магазине (без условия gte, т.к. мы уже проверили)
-  const { error: stockError } = await supabase
-    .from('Shop')
-    .update({
-      remaining_stock: currentShopItem.remaining_stock - 1,
-    })
-    .eq('epoch', item.epoch % 6)
-    .eq('id', item.id);
-
-  if (stockError) {
-    console.error('Ошибка обновления остатка:', stockError);
-    alert('Не удалось уменьшить остаток товара');
-    return;
-  }
 
   // Обновляем баланс
   const newBalance = playerData.balance - item.price;
@@ -172,7 +142,7 @@ export default function ContentShop(){
   // Обновляем данные игрока и магазина
   setPlayerData(prev => ({ ...prev, balance: newBalance }));
   const freshShop = await loadCurrentShop();
-  setShopItems(freshShop.items);
+  
 };
     async function  updateShop(){
         setShopList(shopSessions[numCollection%6]);
@@ -189,7 +159,7 @@ export default function ContentShop(){
                     {shopItems.map((el) => (
                         <div key={el.id} className="cardShop">
                             <h2>{el.name}</h2>
-                            <p>Кол-во: {el.remaining_stock} / {el.initial_stock}</p>
+                            
                             <div className="img-container">
                                 <img src={el.image} alt="" />
                             </div>

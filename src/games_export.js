@@ -36,7 +36,7 @@ export const gamesData = [
         ],
         "timeToBeat": "5.5 часов",
         "dices": "1",
-        "appId": "1802170"
+        "appId": "423230"
     },
     {
         "name": "I Am Bread",
@@ -115,19 +115,6 @@ export const gamesData = [
         "timeToBeat": "10.5 часов",
         "dices": "2",
         "appId": "268910"
-    },
-    {
-        "name": "Nine Sols",
-        "category": "🔥 Hardcore",
-        "tags": [
-            "Metroidvania",
-            "Souls-like",
-            "Difficult",
-            "2D"
-        ],
-        "timeToBeat": "21.5 часов",
-        "dices": "4",
-        "appId": "1809540"
     },
     {
         "name": "Blacksad: Under the Skin",
@@ -309,7 +296,7 @@ export const gamesData = [
         ],
         "timeToBeat": "5.0 часов",
         "dices": "1",
-        "appId": "1304930"
+        "appId": "238320"
     },
     {
         "name": "Outlast 2",
@@ -913,7 +900,7 @@ export const gamesData = [
         ],
         "timeToBeat": "3.5 часов",
         "dices": "1",
-        "appId": "3609750"
+        "appId": "304430"
     },
     {
         "name": "Escape the Backrooms",
@@ -1233,7 +1220,7 @@ export const gamesData = [
         "tags": [],
         "timeToBeat": "2.5 часов",
         "dices": "1",
-        "appId": "0"
+        "appId": "263880"
     },
     {
         "name": "Fears to Fathom - Ironbark Lookout",
@@ -1722,7 +1709,7 @@ export const gamesData = [
         ],
         "timeToBeat": "11.0 часов",
         "dices": "2",
-        "appId": "115320"
+        "appId": "10150"
     },
     {
         "name": "Prototype 2",
@@ -1865,7 +1852,7 @@ export const gamesData = [
         ],
         "timeToBeat": "4.0 часов",
         "dices": "1",
-        "appId": "650330"
+        "appId": "645320"
     },
     {
         "name": "Song of Nunu: A League of Legends Story",
@@ -2464,19 +2451,6 @@ export const gamesData = [
         "timeToBeat": "12.0 часов",
         "dices": "2",
         "appId": "210770"
-    },
-    {
-        "name": "Kingdom Two Crowns",
-        "category": "None",
-        "tags": [
-            "Tower Defense",
-            "Minimalist",
-            "City Builder",
-            "Building"
-        ],
-        "timeToBeat": "21.5 часов",
-        "dices": "4",
-        "appId": "701160"
     },
     {
         "name": "Orcs Must Die! 2",

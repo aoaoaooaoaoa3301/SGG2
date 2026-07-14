@@ -1,13 +1,14 @@
-// shopLogic.txt — исправленная версия
+supabase// shopLogic.txt — исправленная версия
 import { supabase } from '../supabaseClient';
 import { shopSessions } from '../shop';
+import {shop} from '../shop-data.js';
 
-const EPOCH_DURATION_SEC = 4 * 60 * 60;
+const EPOCH_DURATION_SEC = 2 * 60 * 60;
 
 export const getCurrentEpoch = () => Math.floor(Date.now() / 1000 / EPOCH_DURATION_SEC);
 
 // Теперь всегда используем epoch % 6
-export const getCurrentCyclicEpoch = () => getCurrentEpoch() % 6;
+export const getCurrentCyclicEpoch = () => getCurrentEpoch() % 4;
 
 export const initializeEpoch = async (cyclicEpoch) => {
   const { data: existing } = await supabase
@@ -38,15 +39,16 @@ export const initializeEpoch = async (cyclicEpoch) => {
 export const loadCurrentShop = async () => {
   const cyclicEpoch = getCurrentCyclicEpoch(); // ← 0–5
   await initializeEpoch(cyclicEpoch);
-  const { data, error } = await supabase
-    .from('Shop')
-    .select('*')
-    .eq('epoch', cyclicEpoch) // ← ищем по 0–5
-    .order('id', { ascending: true });
-
-  if (error) throw error;
+  const data = [];
+  for(var i=0;i<6;i++){data.push(shop[cyclicEpoch+i])}
   return { epochId: cyclicEpoch, items: data };
 };
+export const createCurrentShop = () =>{
+  const cyclicEpoch = getCurrentCyclicEpoch();
+  const data = [];
+  for(var i=0;i<5;i++){data.push(shop[cyclicEpoch*5+i])}
+  return data ;
+}
 
 export const getTimeToNextEpoch = () => {
   const nowSec = Date.now() / 1000;

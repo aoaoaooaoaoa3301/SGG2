@@ -76,6 +76,7 @@
     position: absolute;
     z-index: 11;
     padding: 8px;
+    
 
     background-color:var(--color-1side);
     box-shadow: 0px 0px 15px var(--color-white);
